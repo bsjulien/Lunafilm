@@ -192,22 +192,22 @@ const MovieInformation = () => {
 
       </Box>
 
+      {data?.videos?.results?.length > 0 && (
       <Modal open={open} onClose={() => setOpen(false)} className={classes.modal} fullWidth closeAfterTransition>
 
-        {data?.videos?.results?.length > 0 && (
-          <iframe
-            autoPlay
-            className={classes.video}
-            frameBorder="0"
-            title="Trailer"
-            src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
-            allow="autoplay"
-            width="1000"
-            height="1000"
-          />
-        )}
+        <iframe
+          autoPlay
+          className={classes.video}
+          frameBorder="0"
+          title="Trailer"
+          src={`https://www.youtube.com/embed/${data.videos.results[0].key}`}
+          allow="autoplay"
+          width="1000"
+          height="1000"
+        />
 
       </Modal>
+      )}
     </Grid>
   );
 };
